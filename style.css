@@ -121,6 +121,13 @@ a:hover{
     width: 40%;
     height: auto;
 }
+.img_sf img{
+    position:fixed;
+    top: 300px;
+    left: 50%;
+    width: 500px;
+    height: auto;
+}
 
 .image-toggle img {
   cursor: pointer;

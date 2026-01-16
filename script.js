@@ -27,13 +27,13 @@ document.querySelectorAll("li[data-img]").forEach(li => {
       // Mostro il box
       div.style.display = "block";
 
-      /* ⏱️ AUTO-CHIUSURA DOPO 2 MINUTI */
+      /*AUTO-CHIUSURA DOPO 2 MINUTI */
       const delay = li.dataset.time ? parseInt(li.dataset.time) : 120000;
       const autoClose = setTimeout(() => {
         div.remove();
       }, delay);
 
-      /* 🖱️ CHIUSURA MANUALE AL CLICK */
+      /*CHIUSURA MANUALE AL CLICK */
       div.addEventListener("click", () => {
         clearTimeout(autoClose); // cancella il timer
         div.remove();
