@@ -1,0 +1,132 @@
+html, body {
+    margin: 0;          
+    padding: 0;         
+    width: 100vw;       
+    height: 100vh;      
+    overflow: hidden;   /* evita barre di scorrimento */
+}
+@font-face{
+    font-family:"PPNeueMachina-InktrapLight";
+    src: url("fonts/PPNeueMachina-InktrapLight.otf") format("opentype");
+}
+body{
+    font-family:"PPNeueMachina-InktrapLight";
+}
+.asterisco { /* is it better to put asterisks as image(?)--> they do not rotate in relation to the centre but i think in relation to the whole div with all the asterisks*/
+    position: fixed;       /* -->fixed in relation to the screen */
+    top: 0;
+    right: 0;
+}
+.star{ /*These should be the filters, clickable*/
+    position: absolute;
+    font-size: 30px;
+    animation: rotateSelf 20s linear infinite
+}
+@keyframes rotateSelf{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);} 
+}/*DOESN'T WORK properly ://*/
+
+#ast1{
+    top: 10px;
+    right: 10px;
+    transform-origin: center;
+}
+#ast2{
+    top: 40px;
+    right: 10px;
+    transform-origin: center;
+}
+#ast3{
+    top:70px;
+    right: 10px;
+    transform-origin: center;
+}
+#ast4{
+    top:100px;
+    right: 10px;
+    transform-origin: center;
+}
+#ast5{
+    top:130px;
+    right: 10px;
+    transform-origin: center;
+    
+} 
+.list-centrate{
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0.69vw;
+    width: 18.10vw;
+    height: 34.7vw;
+    list-style-type: none;
+    padding: 0;     
+}
+.contenitore-liste{
+    text-align: center;
+}
+
+@keyframes scroll-su{
+    0%{transform: translateY(0%);}
+    50%{transform:translateY(-50%)}
+    100%{transform:translateY(0%)}
+    
+}
+@keyframes scroll-giu{
+    0%{transform: translateY(-50%);}
+    50%{transform:translateY(0%)}
+    100%{transform: translateY(-50%);}
+    
+
+}
+.lista-giu {
+animation: scroll-giu 30s linear infinite;
+}
+.lista-su {
+animation: scroll-su 30s linear infinite;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+.image-toggle {
+  position: absolute;  /* ognuna può avere posizione diversa */
+  display: none;       /* inizialmente nascoste */
+  z-index: 1000;
+  cursor: pointer;     /* cliccabile per chiudere */
+}
+.img_kk img{
+  position: fixed;
+  top: 150px;
+  left: 1%;
+  width: 60%;
+  height: auto;
+}
+.img_ava img{
+    position: fixed;
+    top: 10px;
+    left: 200px;
+    width: 200px;
+    height: auto;
+}
+.img_mll img{
+    position:fixed;
+    top:30%;
+    left: 55%;
+    width: 40%;
+    height: auto;
+}
+
+.image-toggle img {
+  cursor: pointer;
+}
+
+
+
+
+
