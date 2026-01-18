@@ -128,6 +128,14 @@ a:hover{
     width: 500px;
     height: auto;
 }
+.img_avm img{
+    position:fixed;
+    top: 30%;
+    left:25%;
+    width: 700px;
+    height: auto;
+
+}
 
 .image-toggle img {
   cursor: pointer;
