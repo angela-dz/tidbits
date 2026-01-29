@@ -4,6 +4,7 @@ html, body {
     width: 100vw;       
     height: 100vh;      
     overflow: hidden;   /* evita barre di scorrimento */
+    font-size: 1.3vw;
 }
 @font-face{
     font-family:"PPNeueMachina-InktrapLight";
@@ -16,11 +17,14 @@ ul{
 /* --- SEZIONE FILTRI E ASTERISCHI --- */
 
 /* --- CONTENITORE ASTERISCHI (FILTRI) --- */
-.asterisco { 
+
+.asterisco {
     position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1000;
+    top: 1.39vh;    /* La posizione del primo asterisco */
+    right: 0.78vw;  /* Distanza dal bordo destro */
+    display: flex;
+    flex-direction: column;
+    gap: 2.78vh;    /* Distanza FISSA tra gli elementi (30px / 1080 * 100) */
 }
 
 .star {
@@ -41,6 +45,7 @@ ul{
     height: auto;
     /* Se vuoi che le icone ruotino sempre come gli asterischi originali: */
     animation: rotateSelf 20s linear infinite;
+    
 }
 
 /* Stato quando il filtro è selezionato */
@@ -51,11 +56,31 @@ ul{
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
 }
 
-/* Posizionamento individuale delle icone a destra */
-#ast1 { top: 15px; right: 15px; }
-#ast2 { top: 55px; right: 15px; }
-#ast3 { top: 90px; right: 15px; }
-#ast4 { top: 120px; right: 15px; }
+#ast1, #ast2, #ast3, #ast4 {
+    position: fixed;
+    right: 0.78vw; /* Mantieni la stessa distanza dal bordo destro */
+}
+
+/* Punto di partenza */
+#ast1 { 
+    top: 1.39vh; 
+}
+
+/* Punto di partenza + 1 salto di distanza */
+#ast2 { 
+    top: calc(1.39vh + 3.7vh); 
+}
+
+/* Punto di partenza + 2 salti di distanza */
+#ast3 { 
+    top: calc(1.39vh + (3.7vh * 2)); 
+}
+
+/* Punto di partenza + 3 salti di distanza */
+#ast4 { 
+    top: calc(1.39vh + (3.7vh * 3)); 
+}
+
 
 /* Quando la stella ha la classe .active, l'immagine interna cambia colore */
 .star.active img {
@@ -152,7 +177,7 @@ li.is-filtered {
     text-align: center;
     display: inline-block;
     vertical-align: top;
-    margin: 0 0.69vw;
+    margin: 0.69vw;
     width: 18.10vw;
     height: 60vh;
     list-style-type: none;
@@ -214,9 +239,9 @@ a:hover{
 }
 .img_ava img {
     position: fixed;
-    top: 0.09vh;    /* (1px / 1080) * 100 */
-    left: 11vw;  /* (200px / 1920) * 100 */
-    width: 10.42vw; /* (200px / 1920) * 100 */
+    top: 0.09vh;
+    left: 11vw;
+    width: 12.5vw; /* Circa il 15% più grande del valore originale */
     height: auto;
 }
 .img_mll img{
@@ -228,9 +253,9 @@ a:hover{
 }
 .img_sf img {
     position: fixed;
-    top: 0.93vh;    /* 10px / 1080 * 100 */
-    right: 10vw;    /* 10% di 100vw è esattamente 10vw */
-    width: 20.83vw; /* 400px / 1920 * 100 */
+    top: 0.93vh;
+    right: 10vw;
+    width: 22.91vw; /* Aumentato del 10% rispetto a 20.83vw */
     height: auto;
 }
 .img_avm img {
@@ -242,9 +267,9 @@ a:hover{
 }
 .img_bp img {
     position: fixed;
-    top: 40vh;      /* 40% di 100vh è esattamente 40vh */
-    right: 0.52vw;  /* 10px / 1920 * 100 */
-    width: 20.83vw; /* 400px / 1920 * 100 */
+    top: 40vh;
+    right: 0.52vw;
+    width: 25vw;  /* Esattamente 1/4 della larghezza del viewport */
     height: auto;
 }
 .img_ti img{
